@@ -2,9 +2,13 @@
 
 AUTOMAKE_OPTIONS = foreign dist-zip
 
-SUBDIRS = src include doc
+SUBDIRS = src include doc win32
 
-EXTRA_DIST = README AUTHORS CHANGES COPYING libogg.spec
+bin_SCRIPTS = ogg-config
+m4datadir = $(datadir)/aclocal
+m4data_DATA = ogg.m4
+
+EXTRA_DIST = README AUTHORS CHANGES COPYING libogg.spec ogg.m4
 
 debug:
 	$(MAKE) all CFLAGS="@DEBUG@"
